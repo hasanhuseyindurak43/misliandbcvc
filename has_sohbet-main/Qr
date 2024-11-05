@@ -1,0 +1,36 @@
+import cv2
+import numpy as np
+import pyzbar.pyzbar as qr
+
+# Replace with your video stream URL
+url = 'http://192.168.1.40:8080/video'
+
+# Initialize video capture with URL
+cap = cv2.VideoCapture(url)
+font = cv2.FONT_HERSHEY_PLAIN
+
+while True:
+    ret, frame = cap.read()
+    if not ret:
+        print("Failed to grab frame")
+        break
+
+    flipped = cv2.flip(frame, flipCode=-1)
+    frame1 = cv2.resize(flipped, (640, 480))
+    qrdetect = qr.decode(frame1)
+
+    for i in qrdetect:
+        data = i.data.decode('utf-8')  # Decode the byte string to a regular string
+        print(i.rect.left, i.rect.top, i.rect.width, i.rect.height)
+        print(data)
+        cv2.rectangle(frame1, (i.rect.left, i.rect.top), (i.rect.left + i.rect.width, i.rect.top + i.rect.height), (0, 255, 0), 3)
+        cv2.putText(frame1, data, (20, 20), font, 2, (255, 0, 0), 2)
+    
+    cv2.imshow("Frame", frame1)
+    key = cv2.waitKey(1) & 0xFF
+    if key == ord("q"):
+        break
+
+# Release video capture and close windows
+cap.release()
+cv2.destroyAllWindows()

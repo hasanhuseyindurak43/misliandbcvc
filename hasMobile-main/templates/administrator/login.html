@@ -1,0 +1,26 @@
+{% extends "administrator/header.html" %}
+
+{% block content %}
+    <form action="" method="POST" class="form">
+
+        {% if error %}
+            <div class="error">
+                {{ error }}
+            </div>
+        {% endif %}
+
+        <ul>
+            <li>
+                <label for="username">E-posta</label>
+                <input type="email" name="email" value="{{ request.form['email'] }}">
+            </li>
+            <li>
+                <label for="password">Şifre</label>
+                <input type="password" name="password" value="{{ request.form['password'] }}">
+            </li>
+            <li>
+                <button type="submit">Giriş yap</button>
+            </li>
+        </ul>
+    </form>
+{% endblock %}

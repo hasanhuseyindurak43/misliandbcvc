@@ -1,0 +1,57 @@
+{% extends "views/header.html" %}
+
+{% block content %}
+    <form action="" method="POST" class="form">
+
+        {% if error %}
+            <div class="error">
+                {{ error }}
+            </div>
+        {% endif %}
+
+        <ul>
+            <ul class="firstlastname">
+                <li>
+                    <label for="firstname"> Adınız : </label>
+                    <input type="text" name="firstname" class="inputtwo" value="">
+                </li>
+                <li>
+                    <label for="lastname"> Soy Adınız : </label>
+                    <input type="text" name="lastname" class="inputtwo" value="">
+                </li>
+            </ul>
+            <ul class="kuladiandkulposta">
+                <li>
+                    <label for="kullaniciadi"> Kullanıcı Adı : </label>
+                    <input type="text" name="kuladi" class="inputtwo" value="">
+                </li>
+                <li>
+                    <label for="kullanicieposta"> Eposta Adresi : </label>
+                    <input type="text" name="kuleposta" class="inputtwo" value="">
+                </li>
+
+            </ul>
+            <ul class="kullsifreandkullsifretwo">
+                <li>
+                    <label for="kullanicisifre"> Kullanıcı Şifre : </label>
+                    <input type="password" name="kulsifre" class="inputtwo" value="">
+                </li>
+                <li>
+                    <label for="kullanicisifretwo"> Şifre Tekrarı : </label>
+                    <input type="password" name="kulsifretwo" class="inputtwo" value="">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <label for="kullbankanumara"> Banka İban Numaranız : </label>
+                    <input type="text" name="kullbankanumara" value="TR">
+                </li>
+            </ul>
+            <li>
+                <button type="submit">Kayıt Ol</button>
+            </li>
+        </ul>
+        <span class="or">hesabın var mı?</span>
+        <a href="{{ url_for('login.login')}}" class="form-url">Hemen Giriş Yap!</a>
+    </form>
+{% endblock %}

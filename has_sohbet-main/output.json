@@ -1,0 +1,22 @@
+{
+    "list_1": [
+        "import customtkinter as ctk",
+        "import tkinter as tk",
+        "root = ctk.CTk()",
+        "root.geometry(\"326x207+350+10\")",
+        "root.title(\"My Program\")"
+    ],
+    "def_liste": [
+        "def button1_click():",
+        "    print('Click Me-button1')"
+    ],
+    "to_liste": [
+        "button1 = ctk.CTkButton(root, text='Deneme', width=77, height=47, command=button1_click)\nbutton1.place(x=110, y=61)"
+    ],
+    "to2_liste": [
+        "create_button(110, 61, 77, 47, text='Deneme')"
+    ],
+    "list_2": [
+        "root.mainloop()"
+    ]
+}

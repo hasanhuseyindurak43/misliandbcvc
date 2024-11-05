@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css') }}">
+    <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAS MOBİLE</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+
+    {% if durum == 1 %}
+        {% if 'user_id' in session %}
+
+            <div class="navbar">
+                <i class='bx bx-menu' id="sidebarBtn"></i>
+                <h1 class="title">HAS MOBILE</h1>
+            </div>
+        {% endif %}
+
+    {% elif durum == 3 %}
+            <div class="navbar">
+                <i class='bx bx-menu' id="sidebarBtn"></i>
+                <h1 class="title">HAS MOBILE</h1>
+            </div>
+    {% endif %}
+
+    <div class="sidebarContainer" id="sidebarContainer" style="margin-left: -100%;">
+        <div class="sidebar">
+            <div class="titlebar">
+                <h3 class="sidebarTitle">Has Mobile</h3>
+            </div>
+            {% if 'user_id' in session %}
+
+                {% if durum == 1 %}
+                    <div class="rows">
+                        <div class="row">
+                            <i class='bx bx-home'></i>
+                            <a class="rowTitle" href="{{url_for('home')}}">Anasayfa</a>
+                        </div>
+                        <div class="row">
+                            <i class='bx bx-home'></i>
+                            <a class="rowTitle" href="{{ url_for('login.logout', id=session['user_id']) }}">Çıkış Yap</a>
+                        </div>
+                    </div>
+                {% endif %}
+
+            {% else %}
+                <div class="rows">
+                    <div class="row">
+                        <i class='bx bx-home'></i>
+                        <a class="rowTitle" href="{{url_for('home')}}">Anasayfa</a>
+                    </div>
+                    <div class="row">
+                        <i class='bx bx-home'></i>
+                        <a class="rowTitle" href="{{url_for('login.login')}}">Giriş Yap</a>
+                    </div>
+                    <div class="row">
+                        <i class='bx bx-home'></i>
+                        <a class="rowTitle" href="{{url_for('register.register')}}">Kayıt OL</a>
+                    </div>
+                    <div class="row">
+                        <i class='bx bx-home'></i>
+                        <a class="rowTitle">About</a>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+	
+    {% if 'user_id' in session %}
+		{% if durum == 1 %}
+			{% block uyeContent %}{% endblock %}
+		{% endif %}
+	{% else %}
+		{% block content %}{% endblock %}
+	{% endif %}
+
+{% extends "administrator/foother.html" %}

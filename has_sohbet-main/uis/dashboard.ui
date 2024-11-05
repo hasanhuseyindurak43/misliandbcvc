@@ -1,0 +1,616 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>810</width>
+    <height>632</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>810</width>
+    <height>632</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>810</width>
+    <height>632</height>
+   </size>
+  </property>
+  <property name="contextMenuPolicy">
+   <enum>Qt::DefaultContextMenu</enum>
+  </property>
+  <property name="windowTitle">
+   <string>HAS SOHBET</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../icon.qrc">
+    <normaloff>:/img/img/h.png</normaloff>:/img/img/h.png</iconset>
+  </property>
+  <property name="toolTip">
+   <string/>
+  </property>
+  <property name="statusTip">
+   <string/>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow{
+	background-color: rgb(1, 0, 42);
+	border-style: outset;
+    border-width: 2px;
+	border: 1px;
+	border-radius: 10px;
+	color: rgb(255, 255, 255);
+}
+</string>
+  </property>
+  <property name="tabShape">
+   <enum>QTabWidget::Rounded</enum>
+  </property>
+  <property name="dockOptions">
+   <set>QMainWindow::AllowTabbedDocks|QMainWindow::AnimatedDocks</set>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">#centralwidget{
+	background-color: rgb(1, 0, 42);
+	border-style: outset;
+    border-width: 2px;
+	border: 1px;
+	border-radius: 10px;
+}</string>
+   </property>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>210</y>
+      <width>231</width>
+      <height>251</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="../icon.qrc">:/img/img/h.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QFrame" name="birframe">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>791</width>
+      <height>611</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#birframe{
+	background-color: rgb(87, 137, 139, 200);
+	border: 1px solid white;
+    border-radius: 10px;
+}</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QFrame" name="ikiframe">
+     <property name="geometry">
+      <rect>
+       <x>-145</x>
+       <y>10</y>
+       <width>141</width>
+       <height>301</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#ikiframe{
+	background-color: rgb(255, 255, 255, 140);
+	border: 1px;
+    border-radius: 10px;
+}</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>10</y>
+        <width>71</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="../icon.qrc">:/kullanıcı/img/user_male3-75.png</pixmap>
+      </property>
+     </widget>
+     <widget class="QLabel" name="kad">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>70</y>
+        <width>141</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#kad{
+	color: rgb(0, 0, 0);
+	font: 75 bold 10pt &quot;Ubuntu&quot;;
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="anasayfa">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>110</y>
+        <width>90</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton#anasayfa{
+	background-color: rgb(54, 145, 171);
+    border-style: outset;
+    border-width: 2px;
+	color: rgb(0, 0, 0);
+	border: 1px;
+	border-radius: 10px;
+}
+
+QPushButton#anasayfa:hover{
+	background-color: rgb(255, 255, 255);
+	color: rgb(54, 145, 171);
+    border-style: outset;
+    border-width: 2px;
+	border: 1px;
+	border-radius: 10px;
+}</string>
+      </property>
+      <property name="text">
+       <string>Anasayfa</string>
+      </property>
+      <property name="icon">
+       <iconset resource="../icon.qrc">
+        <normaloff>:/anasayfa/img/home-32.png</normaloff>:/anasayfa/img/home-32.png</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="ayarlar">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>150</y>
+        <width>90</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton#ayarlar
+{
+	background-color: rgb(54, 145, 171);
+    border-style: outset;
+    border-width: 2px;
+	color: rgb(0, 0, 0);
+	border: 1px;
+	border-radius: 10px;
+}
+
+QPushButton#ayarlar:hover{
+	background-color: rgb(255, 255, 255);
+	color: rgb(54, 145, 171);
+    border-style: outset;
+    border-width: 2px;
+	border: 1px;
+	border-radius: 10px;
+}</string>
+      </property>
+      <property name="text">
+       <string>Ayarlar</string>
+      </property>
+      <property name="icon">
+       <iconset resource="../icon.qrc">
+        <normaloff>:/settings/img/settings-32.png</normaloff>:/settings/img/settings-32.png</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="gruplar">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>190</y>
+        <width>90</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton#gruplar
+{
+	background-color: rgb(54, 145, 171);
+    border-style: outset;
+    border-width: 2px;
+	color: rgb(0, 0, 0);
+	border: 1px;
+	border-radius: 10px;
+}
+
+QPushButton#gruplar:hover{
+	background-color: rgb(255, 255, 255);
+	color: rgb(54, 145, 171);
+    border-style: outset;
+    border-width: 2px;
+	border: 1px;
+	border-radius: 10px;
+}</string>
+      </property>
+      <property name="text">
+       <string>Arkadaşlar</string>
+      </property>
+      <property name="icon">
+       <iconset resource="../icon.qrc">
+        <normaloff>:/kullanıcı/img/group-32.png</normaloff>:/kullanıcı/img/group-32.png</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="mesajlar">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>230</y>
+        <width>90</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton#mesajlar
+{
+	background-color: rgb(54, 145, 171);
+    border-style: outset;
+    border-width: 2px;
+	color: rgb(0, 0, 0);
+	border: 1px;
+	border-radius: 10px;
+}
+
+QPushButton#mesajlar:hover{
+	background-color: rgb(255, 255, 255);
+	color: rgb(54, 145, 171);
+    border-style: outset;
+    border-width: 2px;
+	border: 1px;
+	border-radius: 10px;
+}</string>
+      </property>
+      <property name="text">
+       <string>Mesaj</string>
+      </property>
+      <property name="icon">
+       <iconset resource="../icon.qrc">
+        <normaloff>:/kişiler/img/contacts-32.png</normaloff>:/kişiler/img/contacts-32.png</iconset>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QFrame" name="ucframe">
+     <property name="geometry">
+      <rect>
+       <x>-145</x>
+       <y>320</y>
+       <width>141</width>
+       <height>281</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#ucframe
+{
+	font: 25 italic 10pt &quot;Ubuntu&quot;;
+	background-color: rgb(255, 255, 255, 140);
+	border: 1px;
+    border-radius: 10px;
+}</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QLabel" name="kadname">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>101</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#kadname{
+	color: rgb(0, 0, 0);
+	font: 25 italic 10pt &quot;Ubuntu&quot;;
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QFrame" name="dortframe_anasayfa">
+     <property name="geometry">
+      <rect>
+       <x>800</x>
+       <y>10</y>
+       <width>621</width>
+       <height>591</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#dortframe_anasayfa
+{
+	background-color: rgb(255, 255, 255, 140);
+	border: 1px;
+    border-radius: 10px;
+}</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QLabel" name="kad_2">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>10</y>
+        <width>141</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#kad{
+	color: rgb(0, 0, 0);
+	font: 75 bold 10pt &quot;Ubuntu&quot;;
+}</string>
+      </property>
+      <property name="text">
+       <string>ANASAYFA</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QFrame" name="dortframe_ayarlar">
+     <property name="geometry">
+      <rect>
+       <x>800</x>
+       <y>10</y>
+       <width>621</width>
+       <height>591</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#dortframe_ayarlar
+{
+	background-color: rgb(255, 255, 255, 140);
+	border: 1px;
+    border-radius: 10px;
+}</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QLabel" name="kad_4">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>10</y>
+        <width>141</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#kad{
+	color: rgb(0, 0, 0);
+	font: 75 bold 10pt &quot;Ubuntu&quot;;
+}</string>
+      </property>
+      <property name="text">
+       <string>AYARLAR</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QFrame" name="dortframe_gruplar">
+     <property name="geometry">
+      <rect>
+       <x>800</x>
+       <y>0</y>
+       <width>621</width>
+       <height>591</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#dortframe_gruplar
+{
+	background-color: rgb(255, 255, 255, 140);
+	border: 1px;
+    border-radius: 10px;
+}</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QLabel" name="kad_5">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>10</y>
+        <width>211</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#kad{
+	color: rgb(0, 0, 0);
+	font: 75 bold 10pt &quot;Ubuntu&quot;;
+}</string>
+      </property>
+      <property name="text">
+       <string>GELEN ARKADAŞLIK İSTEKLERİ</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QListWidget" name="requests_list">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>40</y>
+        <width>591</width>
+        <height>192</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#requests_list{
+	color: rgb(255, 255, 255);
+	background-color: rgb(0, 0, 0, 150);
+	border: 1px;
+    border-radius: 10px;
+}</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="kad_7">
+      <property name="geometry">
+       <rect>
+        <x>210</x>
+        <y>240</y>
+        <width>211</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#kad{
+	color: rgb(0, 0, 0);
+	font: 75 bold 10pt &quot;Ubuntu&quot;;
+}</string>
+      </property>
+      <property name="text">
+       <string>EKLİ OLAN ARKADAŞLAR</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QListWidget" name="friend_list">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>270</y>
+        <width>591</width>
+        <height>192</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#friend_list{
+	color: rgb(255, 255, 255);
+	background-color: rgb(0, 0, 0, 150);
+	border: 1px;
+    border-radius: 10px;
+}</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QFrame" name="dortframe_mesajlar">
+     <property name="geometry">
+      <rect>
+       <x>800</x>
+       <y>10</y>
+       <width>621</width>
+       <height>591</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#dortframe_mesajlar
+{
+	background-color: rgb(255, 255, 255, 140);
+	border: 1px;
+    border-radius: 10px;
+}</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QLabel" name="kad_6">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>10</y>
+        <width>141</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#kad{
+	color: rgb(0, 0, 0);
+	font: 75 bold 10pt &quot;Ubuntu&quot;;
+}</string>
+      </property>
+      <property name="text">
+       <string>Mesajlar</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources>
+  <include location="../icon.qrc"/>
+ </resources>
+ <connections/>
+ <slots>
+  <slot>logincontrol()</slot>
+  <slot>anasayfa()</slot>
+  <slot>ayarlar()</slot>
+  <slot>ayar_guncelle()</slot>
+ </slots>
+</ui>

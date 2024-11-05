@@ -1,0 +1,28 @@
+{% extends "administrator/header.html" %}
+
+{% block content %}
+    <div class="container">
+        {% for packet in packets %}
+            <div class="packet">
+                <h5 class="time">{{ packet['paket_adi'] }}</h5>
+                <p class="description">Açıklama : {{ packet['paket_aciklama'] }}</p>
+                <div class="priceDiv">
+                    <h5 class="price">1000 TL Kazancınız : {{ '%.2f'| format(1000 + ((1000/100) * ( packet['paket_f_oran'] / 365) * packet['paket_f_gun'] )) }}  TL</h5>
+                    <a href="{{ url_for('register.register') }}"><button  class="buyBtn">Satın Al</button></a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+{% block uyeContent %}
+    <div class="container">
+        <div class="adminpacket">
+            <div class="user"><div class="userdaire" id="userdaire"></div></div>
+        </div>
+        <div class="adminpacket">
+        </div>
+        <div class="adminpacket">
+        </div>
+    </div>
+{% endblock %}

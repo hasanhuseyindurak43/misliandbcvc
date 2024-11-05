@@ -1,0 +1,28 @@
+{% extends "views/header.html" %}
+
+{% block content %}
+    <form action="" method="POST" class="form">
+
+        {% if error %}
+            <div class="error">
+                {{ error }}
+            </div>
+        {% endif %}
+
+        <ul>
+            <li>
+                <label for="username">Kullanıcı Adı / E-posta</label>
+                <input type="text" name="username" value="{{ request.form['email'] }}">
+            </li>
+            <li>
+                <label for="password">Şifre</label>
+                <input type="password" name="password" value="{{ request.form['password'] }}">
+            </li>
+            <li>
+                <button type="submit">Giriş yap</button>
+            </li>
+        </ul>
+        <span class="or">hesabın yok mu?</span>
+        <a href="{{ url_for('register.register')}}" class="form-url">Hemen kayıt ol!</a>
+    </form>
+{% endblock %}

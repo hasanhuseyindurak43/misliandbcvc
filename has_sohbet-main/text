@@ -1,0 +1,59 @@
+sudo apt install qtbase5-dev qttools5-dev-tools qttools5-dev
+
+pyinstaller --onefile --hidden-import=PyQt5.sip --hidden-import=PyQt5.QtWidgets --hidden-import=PyQt5.QtGui --hidden-import=PyQt5.uic --hidden-import=PyQt5.QtCore your_script.py
+
+pyinstaller --noconfirm --onefile --windowed --icon "/home/barron4335/Desktop/PYTHON/LACHIN/logo.ico" --add-data "/home/barron4335/Desktop/PYTHON/LACHIN/logo.ico:.logo.ico" --add-data "/home/barron4335/Desktop/PYTHON/LACHIN/logo.png:.logo.png" --add-data "/home/barron4335/Desktop/PYTHON/LACHIN/.venv:.venv/" --add-data "/home/barron4335/Desktop/PYTHON/LACHIN/.idea:.idea/" --hidden-import "PyQt6.QtWidgets" --hidden-import "PyQt6.QtGui" --hidden-import "PyQt6.QtCore" --hidden-import "PyQt6.uic" --hidden-import "PyQt6" --hidden-import "requests" --hidden-import "subprocess"  "/home/barron4335/Desktop/PYTHON/LACHIN/pyqt6rename.py"
+
+pyarmor gen main.py
+
+auto-py-to-exe
+
+myapp/
+├── DEBIAN/
+│   ├── control
+│   └── postinst (opsiyonel)
+└── usr/
+    └── local/
+        └── bin/
+            └── myapp
+│       ├── share/
+    │       ├── applications/
+    │       │   └── myapp.desktop
+    │       └── icons/hicolor/64x64/apps/
+    │           └── myapp.png
+
+DEBIAN/control
+
+Package: myapp
+Version: 1.0
+Section: base
+Priority: optional
+Architecture: amd64
+Depends: python3, python3-pyqt5
+Maintainer: İsim <email@domain.com>
+Description: PyQt5 ile yapılan bir masaüstü uygulaması
+
+
+chmod 755 myapp/DEBIAN/postinst
+
+sudo dpkg -i myapp.deb
+
+myapp.desktop
+
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=MyApp
+Comment=PyQt5 ile yapılan bir masaüstü uygulaması
+Exec=/usr/local/bin/myapp  # Uygulamanın çalıştırılabilir dosyasının yolu
+Icon=/usr/share/icons/hicolor/64x64/apps/myapp.png  # Uygulamanın simgesinin yolu
+Terminal=false
+Categories=Utility;Application;
+Terminal=false
+Categories=Utility;Application;
+
+sudo cp myapp.png /usr/share/icons/hicolor/64x64/apps/
+
+sudo cp myapp.desktop /usr/share/applications/
+
+dpkg-deb --build myapp

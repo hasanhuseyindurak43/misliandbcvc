@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>YouTube Film Videos</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="mt-5">YouTube Film Videos</h1>
+      <form method="post" class="my-4">
+        <div class="form-group">
+          <label for="query">Search for Films</label>
+          <input type="text" class="form-control" id="query" name="query" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Search</button>
+      </form>
+      <h2>Saved Films</h2>
+      <div class="row">
+        {% for film in films %}
+        <div class="col-md-6">
+          <div class="card mb-4">
+            <div class="card-body">
+              <h5 class="card-title">{{ film.title }}</h5>
+              <p class="card-text">Duration: {{ film.duration }}</p>
+              <div class="embed-responsive embed-responsive-16by9">
+                {{ film.embed_code|safe }}
+              </div>
+              <form action="{{ url_for('user_action') }}" method="post" class="my-2" id="video_form_{{ film.video_id }}">
+                <input type="hidden" name="video_id" value="{{ film.video_id }}">
+                <input type="hidden" name="timestamp_seconds" id="timestamp_{{ film.video_id }}" value="0">
+                <button type="submit" name="action" value="end" class="btn btn-danger">End</button>
+                <button type="submit" name="action" value="skip" class="btn btn-warning">Skip</button>
+                <button type="submit" name="action" value="finish" class="btn btn-success">Finish</button>
+              </form>
+              <div id="countdown_{{ film.video_id }}" class="my-3"></div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        {% for film in films %}
+          var duration_{{ film.video_id }} = {{ film.total_seconds }};
+          var countdownElement_{{ film.video_id }} = document.getElementById('countdown_{{ film.video_id }}');
+          var timestampInput_{{ film.video_id }} = document.getElementById('timestamp_{{ film.video_id }}');
+
+          function updateCountdown(videoId) {
+            var timestamp = parseInt(timestampInput_{{ film.video_id }}.value, 10);
+            if (timestamp >= duration_{{ film.video_id }}) {
+              countdownElement_{{ film.video_id }}.innerText = "Time's up!";
+              return;
+            }
+            var minutes = Math.floor((duration_{{ film.video_id }} - timestamp) / 60);
+            var seconds = (duration_{{ film.video_id }} - timestamp) % 60;
+            countdownElement_{{ film.video_id }}.innerText = minutes + "m " + seconds + "s";
+
+            timestampInput_{{ film.video_id }}.value = timestamp + 1;
+            setTimeout(function () { updateCountdown(videoId); }, 1000);
+          }
+
+          updateCountdown('{{ film.video_id }}');
+        {% endfor %}
+      });
+    </script>
+  </body>
+</html>

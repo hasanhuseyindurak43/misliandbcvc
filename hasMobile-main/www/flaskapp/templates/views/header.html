@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
+    <meta http-equiv="X-UA Compatible" content="IE=edge">
+    <meta name="description" content="Has Mobile ile sende FAİZ ile kazançına kazanç sağla.... :)">
+    <meta name="keywords" content="faiz, faiz ile kazanç, faiz ile kolay kazanç, parayı 2 ye katlayan siteler, parayı 2 ye katlama, para kazandıran site, para kazandıran siteler">
+    <meta name="author" content="Hasan Hüseyin Durak">
+    <title>HAS MOBİLE</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" type="image/png" sizes="192x192" href="{{ url_for('static', filename='img/h.png') }}">
+    <link rel="apple-touch-icon" sizes="192x192" href="{{ url_for('static', filename='img/h.png') }}">
+    <link rel="manifest" href="{{ url_for('static', filename='manifest.json') }}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css') }}">
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/static/sw.js')
+                .then((registration) => {
+                    console.log('Service Worker, kapsam ile kaydedildi:', registration.scope);
+                })
+                .catch((error) => {
+                    console.error('Service Worker kaydı başarısız:', error);
+                });
+        }
+    </script>
+</head>
+
+<body>
+    {% if durum == 2 %}
+        {% if 'user_id' in session %}
+
+            <div class="navbar">
+                <i class='bx bx-menu bx-lg' id="sidebarBtn" style='color:#3db916' ></i>
+                <h1 class="title">HAS MOBILE</h1>
+            </div>
+        {% endif %}
+
+    {% elif durum == 3 %}
+            <div class="navbar">
+                <i class='bx bx-menu bx-lg' id="sidebarBtn" style='color:#3db916' ></i>
+                <h1 class="title">HAS MOBILE</h1>
+            </div>
+    {% endif %}
+
+    <div class="sidebarContainer" id="sidebarContainer" style="margin-left: -100%;">
+        <div class="sidebar">
+            <div class="titlebar">
+                <h3 class="sidebarTitle">Has Mobile</h3>
+            </div>
+            {% if 'user_id' in session %}
+
+                {% if durum == 2 %}
+                    <div class="rows">
+                        <a class="row" href="{{url_for('home')}}">
+                            <i class='bx bx-home' style='color:#3db916' ></i>
+                            <p class="rowTitle">ANASAYFA</p>
+                        </a>
+                        <a class="row" href="{{ url_for('faiz.faiz')}}">
+                            <i class='bx bx-wallet' style='color:#3db916' ></i>
+                            <p class="rowTitle">Faiz Hesap Aç</p>
+                        </a>
+                        <a class="row" href="{{ url_for('login.logout', id=session['user_id']) }}">
+                            <i class='bx bx-log-out' style='color:#3db916' ></i>
+                            <p class="rowTitle">Çıkış Yap</p>
+                        </a>
+                    </div>
+                {% endif %}
+            {% else %}
+                <div class="rows">
+                    <a class="row" href="{{url_for('home')}}">
+                        <i class='bx bx-home' style='color:#3db916' ></i>
+                        <p class="rowTitle">Anasayfa</p>
+                    </a>
+                    <a class="row" href="{{url_for('login.login')}}">
+                        <i class='bx bx-log-in' style='color:#3db916' ></i>
+                        <p class="rowTitle">Giriş Yap</p>
+                    </a>
+                    <a class="row" href="{{url_for('register.register')}}">
+                        <i class='bx bx-user-plus' style='color:#3db916' ></i>
+                        <p class="rowTitle">Kayıt OL</p>
+                    </a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+	<div id="istek">
+	{% if 'user_id' in session %}
+		{% if durum == 2 %}
+			{% block uyeContent %}{% endblock %}
+		{% endif %}
+	{% else %}
+		{% block content %}{% endblock %}
+	{% endif %}
+    </div>
+{% extends "views/foother.html" %}

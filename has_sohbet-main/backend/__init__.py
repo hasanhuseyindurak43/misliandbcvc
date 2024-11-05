@@ -1,0 +1,1 @@
+__all__ = ['veri_listele', 'veri_ekle', 'veri_guncelle', 'veri_sil']

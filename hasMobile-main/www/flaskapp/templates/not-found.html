@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Not Found</title>
+
+    <!-- JetBrains Mono Font-->
+    <link href='https://fonts.googleapis.com/css?family=JetBrains Mono' rel='stylesheet'>
+
+    <style>
+        body {
+            font-family: 'JetBrains Mono';
+        }
+        .notfoundmsg {
+            font-size: 30px;
+            margin: auto;
+            width: auto;
+            height: auto;
+            border: 3px solid green;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .descmsg {
+            font-size: 30px;
+            margin: auto;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .errorman {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+
+{% if 'user_id' in session %}
+		{% if durum == 2 %}
+            <h1 class="notfoundmsg">Aradığınız Sayfa Bulunamadı.</h1>
+            <h2 class="descmsg">Aradığınız sayfa geçiçi olarak kapalı yada hiç olmayabilir lütfen geliştiriciler ile iletişime geçiniz.</h2>
+            <img class="errorman" src="https://admiral.digital/wp-content/uploads/2023/08/404_page-not-found.png">
+        {% endif %}
+	{% else %}
+    <h1 class="notfoundmsg">Aradığınız Sayfa Bulunamadı.</h1>
+    <h2 class="descmsg">Aradığınız sayfa geçiçi olarak kapalı yada hiç olmayabilir lütfen geliştiriciler ile iletişime geçiniz.</h2>
+    <img class="errorman" src="https://admiral.digital/wp-content/uploads/2023/08/404_page-not-found.png">
+{% endif %}
+
+</body>
+</html>

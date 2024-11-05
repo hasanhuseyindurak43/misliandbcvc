@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{{ video.title }}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="mt-5">{{ video.title }}</h1>
+      <div class="embed-responsive embed-responsive-16by9">
+        {{ video.embed_code|safe }}
+      </div>
+      <form action="{{ url_for('user_action') }}" method="post" class="my-4" id="video_form">
+        <input type="hidden" name="video_id" value="{{ video.video_id }}">
+        <input type="hidden" name="timestamp_seconds" id="timestamp" value="0">
+        <button type="submit" name="action" value="end" class="btn btn-danger">End</button>
+        <button type="submit" name="action" value="skip" class="btn btn-warning">Skip</button>
+        <button type="submit" name="action" value="finish" class="btn btn-success">Finish</button>
+      </form>
+      <div id="countdown" class="my-3"></div>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var videoId = '{{ video.video_id }}';
+        var duration = {{ video.total_seconds }};
+        var countdownElement = document.getElementById('countdown');
+        var timestampInput = document.getElementById('timestamp');
+
+        function updateCountdown() {
+          var timestamp = parseInt(timestampInput.value, 10);
+          if (timestamp >= duration) {
+            countdownElement.innerText = "Time's up!";
+            return;
+          }
+          var minutes = Math.floor((duration - timestamp) / 60);
+          var seconds = (duration - timestamp) % 60;
+          countdownElement.innerText = minutes + "m " + seconds + "s";
+
+          timestampInput.value = timestamp + 1;
+          setTimeout(updateCountdown, 1000);
+        }
+
+        updateCountdown();
+      });
+    </script>
+  </body>
+</html>

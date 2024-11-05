@@ -1,0 +1,84 @@
+{% extends "views/header.html" %}
+
+{% block content %}
+    <div class="container">
+        {% for packet in packets %}
+            <div class="packet">
+                <h3 class="time">{{ packet['paket_adi'] }}</h3>
+                <p class="description">Açıklama : {{ packet['paket_aciklama'] }}</p>
+                <div class="priceDiv">
+                    <p class="price">1000 TL Kazancınız : {{ '%.2f'| format(1000 + ((1000/100) * ( packet['paket_f_oran'] / 365) * packet['paket_f_gun'] )) }}  TL</p>
+                    <a href="{{ url_for('register.register') }}"><button  class="buyBtn">Satın Al</button></a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+{% block uyeContent %}
+    <div class="container">
+        {% for packet in packets %}
+            <div class="packet">
+                <h5 class="time">{{ packet['paket_adi'] }}</h5>
+                <p class="description">Açıklama : {{ packet['paket_aciklama'] }}</p>
+                <div class="priceDiv">
+                    <h5 class="price">1000 TL Kazancınız : {{ '%.2f'| format(1000 + ((1000/100) * ( packet['paket_f_oran'] / 365) * packet['paket_f_gun'] )) }}  TL</h5>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="container">
+        <div class="packetcontainer">
+            <div class="packet cuzdan">
+                <h5 class="time">Cüzdan Hesabı</h5>
+                <p class="description">Hesabınız da ki bakiyeyi yatırımınızdan 1 gün sonra çekebilirsiniz.</p>
+
+                {% for cuzdans in cuzdans %}
+                    <div class="priceDiv">
+                        <h5 class="price">{{ cuzdans['cuzdan_miktar'] }} TL</h5>
+                        <div class="cekyatir">
+                            <a href="{{ url_for('para.paraYatir') }}"><button  class="buyBtn" id="tlYatir">TL Yatır</button></a>
+                            <a href="{{ url_for('para.paraCek', id=cuzdans['cid']) }}"><button  class="buyBtn" id="tlCek">TL Çek</button></a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="packet odeme">
+            {% for ptalep in ptaleps %}
+                <div class="packet para">
+                    <h5>{{ ptalep['ptalep_iban'] }}</h5>
+                    <h5>{{ ptalep['ptalep_tutar'] }} TL</h5>
+                    {% if ptalep['ptalep_onay'] == 0 %}
+                        <h5>Onaylanmadı</h5>
+                    {% elif ptalep['ptalep_onay'] == 1 %}
+                        <h5>Onaylandı</h5>
+                    {% endif %}
+                    <h5>{{ ptalep['ptalep_r_date'] }}</h5>
+                    <a href="{{ url_for('para.paraCekTwo', id=ptalep['pid']) }}"><button  class="buyBtn">Çekime Devam Et</button></a>
+                </div>
+            {% endfor %}
+            </div>
+        </div>
+        <div class="packet faiz">
+            <h5 class="time">Faiz Hesabı</h5>
+            <p class="description">Faizleriniz cüzdana geçtikten 1 gün sonra cüzdan da ki paranızı çekebilirsiniz.</p>
+            <div class="priceDiv">
+                <h5 class="price"></h5>
+                <a href="{{ url_for('faiz.faiz')}} "><button  class="buyBtn">Faiz Hesap Aç</button></a>
+            </div>
+
+            {% for faizs in faizs %}
+                <div class="faizDiv">
+                    <h5 class="faizTitle">{{faizs['hesap_adi']}}</h5>
+                    <div class="faizContents">
+                        <p>Vade Yatırılan Para : {{faizs['tutar']}}</p>
+                        <p>Vade Başlangıç Tarihi : {{faizs['vade_b_tarih'].strftime("%d / %m / %Y")}}</p>
+                        <p>Vade Bitiş Tarihi : {{faizs['vade_bitis_tarih'].strftime("%d / %m / %Y")}}</p>
+                        <p>Vade Sonu : {{faizs['vade_s_tutar']}}</p>
+                        <a href="{{ url_for('faiz.faizKapat', id=faizs['fid']) }}"><button  class="faizBtn">Hesabı Kapat</button></a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

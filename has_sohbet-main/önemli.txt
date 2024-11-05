@@ -1,0 +1,26 @@
+MainWindow.setWindowFlags(QtCore.Qt.FramelessWindowHint)
+
+
+import hashlib
+
+text_1 = input("Seed Key : ")
+text_2 = input("Client Key : ")
+# Given text
+text = f"{text_1}{text_2}"
+
+# Encrypting with SHA512
+encrypted_text = hashlib.sha512(text.encode()).hexdigest()
+
+print(f"Sha512 : {encrypted_text}")
+
+# Converting the SHA512 encrypted text to a decimal number
+decimal_number = int(encrypted_text, 16)
+print(f"Sha512 sonucun Ondalık hali : {decimal_number}")
+
+# Converting the decimal number to a number between 2 and 12
+# Use modulo operation and adjust the range
+range_min = 1
+range_max = 14
+number_in_range = (decimal_number % (range_max - range_min + 1)) + range_min
+
+print(f"2 ila 12 arasındaki sayı : {number_in_range}")

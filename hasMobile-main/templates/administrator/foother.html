@@ -1,0 +1,73 @@
+{% block footer %}
+    <!-- Boxicons CSS -->
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        document.getElementById('amountInput').addEventListener('input', function(event) {
+            // Kullanıcının girdiği değeri al
+            let inputValue = event.target.value;
+
+            // Eğer değer bir sayıysa ve boş değilse
+            if (!isNaN(inputValue) && inputValue.trim() !== '') {
+                // İki ondalık basamağa kadar olan kısmı ekleyerek güncelle
+                event.target.value = parseFloat(inputValue).toFixed(2);
+            }
+        });
+    </script>
+    <script>
+        function calculateInterest() {
+            // Girilen miktarı al
+            var amount = parseFloat(document.getElementById('amountInput').value);
+
+            // Seçilen paket oranını al
+            var selectedOption = document.getElementById('paketSelect').options[document.getElementById('paketSelect').selectedIndex];
+            // Seçilen option'ın value değerini al
+            var selectedValue = selectedOption.value;
+
+            // Boşluk karakteri ile value değerini iki parçaya ayır
+            var splittedValues = selectedValue.split(' ');
+
+            // İki bilgiyi al
+            var firstInfo = splittedValues[0];
+            var secondInfo = splittedValues[1];
+
+            // Eğer girilen değer boş değilse
+            if (amount !== '') {
+                // Girilen miktarı float'a çevir
+                amount = parseFloat(amount);
+
+                // Eğer girilen değer bir sayıysa
+                if (!isNaN(amount)) {
+                    // Faiz miktarını hesapla
+                    var interestAmount = amount + ((amount / 100) * (firstInfo / 365) * secondInfo);
+
+                    // Hesaplanan faiz miktarını faizAmountSpan içine yerleştir
+                    document.getElementById('faizAmountSpan').textContent = interestAmount.toFixed(2);
+                } else {
+                    // Eğer geçerli bir sayı değeri değilse, faizAmountSpan içindeki metni temizle
+                    document.getElementById('faizAmountSpan').textContent = '';
+                }
+            } else {
+                // Eğer boşsa, faizAmountSpan içindeki metni temizle
+                document.getElementById('faizAmountSpan').textContent = '';
+            }
+
+        }
+    </script>
+    <div class="reklam">
+        <script type="text/javascript">
+            atOptions = {
+                'key' : 'd020d5131a6b1fb1f1d580b0fe114d21',
+                'format' : 'iframe',
+                'height' : 90,
+                'width' : 728,
+                'params' : {}
+            };
+            document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.profitabledisplaynetwork.com/d020d5131a6b1fb1f1d580b0fe114d21/invoke.js"></scr' + 'ipt>');
+        </script>
+    </div>
+</body>
+</html>
+{% endblock %}

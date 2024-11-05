@@ -1,0 +1,1019 @@
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: white;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #c7ebb2;
+  text-decoration: none;
+}
+
+.navbar {
+    box-sizing: border-box;
+    padding: 0 10px;
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 7%;
+    background-color: #222;
+}
+
+.navbar .bx-menu {
+    position: absolute;
+    left: 1vw;
+    font-size: 2vw;
+    cursor: pointer;
+}
+
+.navbar h1{
+    color: #3db916;
+}
+
+.sidebarContainer {
+  position: fixed;
+  width: 100%;
+  height: 93%;
+  background-color: rgba(0, 0, 0, 0.178);
+  z-index: 10;
+  transition: all 0.3s;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  height: 100%;
+  background-color: #333;
+}
+
+.sidebar .titlebar {
+  display: flex;
+  padding: 5%;
+  width: 90%;
+  height: 10%;
+}
+
+.sidebar hr{
+    width: 80%;
+}
+
+.sidebar .rows {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 90%;
+}
+
+.sidebar .row {
+  display: flex;
+  align-items: center;
+  margin-top: 1vw;
+  padding-left: 5%;
+  width: 85%;
+  height: 10%;
+  border-radius: 1vw;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.048);
+  transition: 0.3s;
+  text-decoration: none;
+  color: white;
+}
+
+.sidebar .row a{
+    text-decoration: none;
+    color: white;
+}
+
+.sidebar .row:hover {
+    background-color: rgba(255, 255, 255, 0.199);
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 0%;
+}
+
+.container .packetcontainer{
+    display: flex;
+    flex-direction: column;
+    width: 49.2%;
+    height: 43vw;
+}
+
+.container .packet {
+  margin-left: 1vw;
+  margin-top: 1vw;
+  padding: 1vw;
+  width: 46%;
+  border-radius: 1vw;
+  background-color: #007bff;
+}
+
+.container .adminpacket {
+    margin-left: 1vw;
+    margin-top: 1vw;
+    padding: 1vw;
+    width: 30%;
+    border-radius: 1vw;
+    background-color: #333;
+    height: 31vw;
+}
+
+.container .adminpacket .user{
+    overflow: hidden;
+    width: 354px;
+    height: 684px;
+}
+
+.container .adminpacket .userdaire{
+    background: red;
+    width: 350px;
+    height: 3%;
+    border: 0.2vw solid;
+    border-radius: 20px 21px 20px 21px;
+}
+
+.container .packet .priceDiv {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container .packet .priceDiv button {
+  height: 4vw;
+  width: 10vw;
+  border-radius: 0.6vw;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background-color: #007bff;
+  color: white;
+}
+
+.container .packet .priceDiv .buyBtn {
+  height: 4vw;
+  width: 10vw;
+  border-radius: 0.6vw;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background-color: #222;
+  color: white;
+}
+
+.container .packetcontainer .packet .buyBtn {
+  height: 4vw;
+  width: 10vw;
+  border-radius: 0.6vw;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background-color: #222;
+  color: white;
+}
+
+.reklam {
+    position: absolute;
+    width: 55vw;
+    display: flex;
+    border: 1vw;
+    border-radius: 1vw;
+    background-color: #007bff;
+    justify-content: center;
+    margin-top: 1vw;
+    left: 20vw;
+    padding: 1vw;
+    align-items: center;
+}
+
+.form {
+    width: 700px;
+    margin: 1vw auto;
+    background: #007bff;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 2vw;
+}
+
+.form ul {
+    margin: 0;
+    padding: 0;
+}
+
+.form ul li {
+    margin-bottom: 15px;
+    list-style-type: none;
+}
+
+.form ul li label {
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 10px
+}
+
+.form ul li input {
+    width: 95%;
+    height: 40px;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 0 15px;
+    border-radius: 5px;
+    border: 1px solid #eee;
+    color: #222
+}
+
+.form ul li input:focus {
+    color: #7158e2;
+    border-color: #7158e2
+}
+
+.form ul li button {
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    color: #fff;
+    background: #222;
+    font-size: 16px;
+    cursor: pointer
+}
+
+.form .or {
+    display: block;
+    text-align: center;
+    color: white;
+    margin-bottom: 10px
+}
+
+.form .form-url {
+    display: block;
+    text-align: center;
+    color: white;
+    text-decoration: underline
+}
+
+.post-detail {
+    padding: 20px;
+    margin-top: 40px;
+    background: #fff;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, .06)
+}
+
+.post-meta {
+    padding-top: 20px;
+    text-align: center
+}
+
+.post-meta ul {
+    display: inline-flex
+}
+
+.post-meta ul li {
+    margin-right: 25px
+}
+
+/*# sourceMappingURL=style.css.map */
+.error {
+    padding: 8px 10px;
+    background: darkred;
+    color: #fff;
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
+.okey {
+    padding: 8px 10px;
+    background: darkgreen;
+    color: #fff;
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
+.form ul li select {
+    width: 100%;
+    height: 40px;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 0 15px;
+    border-radius: 5px;
+    border: 1px solid #eee;
+    color: #222;
+    appearance: none;
+    cursor: pointer;
+}
+
+.form ul li .vadetur {
+    width: 99%;
+    height: 40px;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 0 15px;
+    border-radius: 5px;
+    border: 1px solid #eee;
+    color: #222;
+}
+
+.form ul li textarea {
+    width: 100%;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 15px;
+    font-family: 'Muli', sans-serif;
+    line-height: 1.6;
+    border-radius: 5px;
+    border: 1px solid #eee;
+    color: #222;
+    appearance: none;
+    cursor: pointer;
+}
+
+.form ul .firstlastname {
+    width: 50vw;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-around;
+}
+
+.form ul .kuladiandkulposta {
+    width: 50vw;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-around;
+}
+
+.form ul .kullsifreandkullsifretwo {
+    width: 50vw;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-around;
+}
+
+.container .cuzdan{
+    height: 159px;
+    width: 94%;
+}
+
+.container .odeme{
+    width: 94%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    overflow-y: auto; /* Dikey scrollbar eklemek */
+    scrollbar-width: thin; /* Scrollbar'ı ince hale getir */
+    sscrollbar-color: transparent transparent; /* Scrollbar'ı saydam yap */
+}
+
+.container .odeme::-webkit-scrollbar {
+    width: 6px; /* Scrollbar'ın genişliği */
+    background-color: transparent; /* Scrollbar arka plan rengi */
+}
+
+.container .odeme::-webkit-scrollbar-thumb {
+    background-color: transparent; /* Scrollbar dolgu rengi */
+}
+
+.container .odeme::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.2); /* Scrollbar dolgu rengi - hover durumu */
+}
+
+.container .para{
+    width: 94%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid;
+    background-color: #4dfe3f;
+    color: #333;
+}
+
+.faiz {
+    overflow-y: auto; /* Dikey scrollbar eklemek */
+    scrollbar-width: thin; /* Scrollbar'ı ince hale getir */
+    sscrollbar-color: transparent transparent; /* Scrollbar'ı saydam yap */
+    height: 40vw;
+}
+
+.faiz::-webkit-scrollbar {
+    width: 6px; /* Scrollbar'ın genişliği */
+    background-color: transparent; /* Scrollbar arka plan rengi */
+}
+
+.faiz::-webkit-scrollbar-thumb {
+    background-color: transparent; /* Scrollbar dolgu rengi */
+}
+
+.faiz::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.2); /* Scrollbar dolgu rengi - hover durumu */
+}
+
+.container .packet .faizDiv .faizContents .faizBtn {
+  height: 4vw;
+  width: 10vw;
+  border-radius: 0.6vw;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background-color: #222;
+  color: white;
+}
+
+.container .packet .faizDiv {
+    display: flex;
+    background: rgba(255,255,255,0.1);
+    border: 2px solid rgba(13,213,255,0.5);
+    border-radius: 51px;
+    padding: 10px;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+}
+
+.container .packet .faizDiv .faizTitle {
+    font-size: 18px
+}
+
+.container .packet .faizDiv .faizContents {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.moneyContent {
+    margin: auto;
+    background: #007bff;
+    border-radius: 2vw;
+    display: flex;
+    width: 97%;
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+    overflow: auto;
+    flex-direction: column;
+    align-items: center;
+    height:70vw;
+    max-height: 13vw;
+}
+
+/* Genel scrollbar stilleri */
+.moneyContent::-webkit-scrollbar {
+    width: 12px;
+}
+
+.moneyContent::-webkit-scrollbar-thumb {
+    background-color: #888;
+}
+
+.moneyContent::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+/* İçerik elemanları için düzenleme */
+.moneyContent > * {
+    margin-bottom: 10px; /* veya istediğiniz bir margin değeri */
+}
+
+@media only screen and (min-width: 200px) and (max-width: 300px) {
+    .navbar .bx-menu {
+        font-size: 5vw;
+    }
+    .sidebarContainer {
+        background-color: transparent;
+    }
+    .sidebar {
+        width: 100%;
+    }
+    .container .packet {
+        margin-left: 1vw;
+        margin-top: 1vw;
+        padding: 1vw;
+        width: 95%;
+        border-radius: 1vw;
+        background-color: #007bff;
+    }
+    .container .cuzdan{
+        height: 225px;
+    }
+    .container .packet .priceDiv {
+        flex-direction: column;
+    }
+    .container .packet .priceDiv .buyBtn {
+        height: 13vw;
+        width: 41vw;
+    }
+
+    .form {
+        width: 220px;
+    }
+
+    .form ul li input {
+        width: 85%;
+    }
+
+    .moneyContent {
+        margin: auto;
+        background: #007bff;
+        border-radius: 2vw;
+        display: flex;
+        width: 100%;
+        margin-top: 2vw;
+        margin-bottom: 2vw;
+        overflow: auto;
+        flex-direction: column;
+        align-items: center;
+        height: 300vw;
+        max-height: 58vw;
+    }
+
+    /* Genel scrollbar stilleri */
+    .moneyContent::-webkit-scrollbar {
+        width: 12px;
+    }
+
+    .moneyContent::-webkit-scrollbar-thumb {
+        background-color: #888;
+    }
+
+    .moneyContent::-webkit-scrollbar-track {
+        background-color: transparent;
+    }
+}
+
+@media only screen and (min-width: 301px) and (max-width: 359px) {
+    .navbar .bx-menu {
+        font-size: 5vw;
+    }
+    .sidebarContainer {
+        background-color: transparent;
+    }
+    .sidebar {
+        width: 100%;
+    }
+
+    .moneyContent {
+        margin: auto;
+        background: #007bff;
+        border-radius: 2vw;
+        display: flex;
+        width: 97%;
+        margin-top: 2vw;
+        margin-bottom: 2vw;
+        overflow: auto;
+        flex-direction: column;
+        align-items: center;
+        height:70vw;
+        max-height: 50vw;
+    }
+
+    .container .packet {
+        margin-left: 1vw;
+        margin-top: 1vw;
+        padding: 1vw;
+        width: 95%;
+        border-radius: 1vw;
+        background-color: #007bff;
+    }
+
+    .container .packetcontainer{
+        display: flex;
+        flex-direction: column;
+        width: 96%;
+        height: 171vw;
+    }
+
+    .container .cuzdan{
+        height: 232px;
+        width: 99%;
+        margin-bottom: 5vw;
+    }
+
+    .container .odeme{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin-bottom: 5vw;
+        overflow-y: auto; /* Dikey scrollbar eklemek */
+        scrollbar-width: thin; /* Scrollbar'ı ince hale getir */
+        sscrollbar-color: transparent transparent; /* Scrollbar'ı saydam yap */
+    }
+
+    .container .faiz {
+        overflow-y: auto; /* Dikey scrollbar eklemek */
+        scrollbar-width: thin; /* Scrollbar'ı ince hale getir */
+        sscrollbar-color: transparent transparent; /* Scrollbar'ı saydam yap */
+        height: 200vw;
+    }
+
+    .container .faiz::-webkit-scrollbar {
+        width: 6px; /* Scrollbar'ın genişliği */
+        background-color: transparent; /* Scrollbar arka plan rengi */
+    }
+
+    .container .faiz::-webkit-scrollbar-thumb {
+        background-color: transparent; /* Scrollbar dolgu rengi */
+    }
+
+    .container .faiz::-webkit-scrollbar-thumb:hover {
+        background-color: rgba(0, 0, 0, 0.2); /* Scrollbar dolgu rengi - hover durumu */
+    }
+
+    .container .para{
+        width: 94%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 2px solid;
+        background-color: #4dfe3f;
+        color: #333;
+    }
+
+    .container .packetcontainer .packet .buyBtn {
+        height: 10vw;
+        width: 40vw;
+    }
+
+    .container .packet .priceDiv {
+        flex-direction: column;
+    }
+    .container .packet .priceDiv .buyBtn {
+        height: 13vw;
+        width: 41vw;
+    }
+
+    .container .packet .faizDiv {
+        display: flex;
+        background: rgba(255,255,255,0.1);
+        border: 2px solid rgba(13,213,255,0.5);
+        border-radius: 51px;
+        padding: 10px;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 6vw;
+        margin-bottom: 6vw;
+    }
+
+    .container .packet .faizDiv .faizContents .faizBtn {
+        height: 13vw;
+        width: 41vw;
+        border-radius: 0.6vw;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        background-color: #222;
+        color: white;
+    }
+
+    .container .cuzdan{
+        height: 232px;
+    }
+
+    .form {
+        width: 320px;
+    }
+
+    .form ul li input {
+        width: 90%;
+    }
+
+    .form ul .firstlastname {
+        width: 94vw;
+    }
+
+    .form ul .kuladiandkulposta {
+        width: 94vw;
+    }
+
+    .form ul .kullsifreandkullsifretwo {
+        width: 94vw;
+    }
+
+    .form ul li .inputtwo {
+        width: 69%;
+    }
+}
+
+@media only screen and (min-width: 360px) and (max-width: 608px) {
+    .navbar .bx-menu {
+        font-size: 5vw;
+    }
+    .sidebarContainer {
+        background-color: transparent;
+    }
+    .sidebar {
+        width: 100%;
+    }
+
+    .moneyContent {
+        margin: auto;
+        background: #007bff;
+        border-radius: 2vw;
+        display: flex;
+        width: 97%;
+        margin-top: 2vw;
+        margin-bottom: 2vw;
+        overflow: auto;
+        flex-direction: column;
+        align-items: center;
+        height:70vw;
+        max-height: 44vw;
+    }
+
+    .container .packet {
+        margin-left: 1vw;
+        margin-top: 1vw;
+        padding: 1vw;
+        width: 95%;
+        border-radius: 1vw;
+        background-color: #007bff;
+    }
+
+    .container .packetcontainer{
+        display: flex;
+        flex-direction: column;
+        width: 96%;
+        height: 145vw;
+    }
+
+    .container .cuzdan{
+        height: 10%;
+        width: 99%;
+        margin-bottom: 5vw;
+    }
+
+    .container .odeme{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin-bottom: 5vw;
+        overflow-y: auto; /* Dikey scrollbar eklemek */
+        scrollbar-width: thin; /* Scrollbar'ı ince hale getir */
+        sscrollbar-color: transparent transparent; /* Scrollbar'ı saydam yap */
+    }
+
+    .container .faiz {
+        overflow-y: auto; /* Dikey scrollbar eklemek */
+        scrollbar-width: thin; /* Scrollbar'ı ince hale getir */
+        sscrollbar-color: transparent transparent; /* Scrollbar'ı saydam yap */
+        height: 156vw;
+    }
+
+    .container .faiz::-webkit-scrollbar {
+        width: 6px; /* Scrollbar'ın genişliği */
+        background-color: transparent; /* Scrollbar arka plan rengi */
+    }
+
+    .container .faiz::-webkit-scrollbar-thumb {
+        background-color: transparent; /* Scrollbar dolgu rengi */
+    }
+
+    .container .faiz::-webkit-scrollbar-thumb:hover {
+        background-color: rgba(0, 0, 0, 0.2); /* Scrollbar dolgu rengi - hover durumu */
+    }
+
+    .container .para{
+        width: 94%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 2px solid;
+        background-color: #4dfe3f;
+        color: #333;
+    }
+
+    .container .packet .priceDiv {
+        flex-direction: column;
+    }
+
+    .container .packet .priceDiv .buyBtn {
+        height: 8vw;
+        width: 26vw;
+    }
+
+    .container .packet .faizDiv {
+        display: flex;
+        background: rgba(255,255,255,0.1);
+        border: 2px solid rgba(13,213,255,0.5);
+        border-radius: 51px;
+        padding: 10px;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 6vw;
+        margin-bottom: 6vw;
+    }
+
+    .container .packet .faizDiv .faizContents .faizBtn {
+        height: 13vw;
+        width: 41vw;
+        border-radius: 0.6vw;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        background-color: #222;
+        color: white;
+    }
+
+    .container .cuzdan{
+        height: 232px;
+    }
+
+    .form {
+        width: 316px;
+    }
+
+    .form ul li input {
+        width: 90%;
+    }
+
+   .form ul .firstlastname {
+        width: 94vw;
+    }
+
+    .form ul .kuladiandkulposta {
+        width: 94vw;
+    }
+
+    .form ul .kullsifreandkullsifretwo {
+        width: 94vw;
+    }
+
+    .form ul li .inputtwo {
+        width: 69%;
+    }
+
+}
+
+@media only screen and (min-width: 609px) and (max-width: 1200px) {
+    .container .packet {
+        margin-left: 1vw;
+        margin-top: 1vw;
+        padding: 1vw;
+        width: 46%;
+        border-radius: 1vw;
+        background-color: #007bff;
+    }
+
+    .container .packetcontainer{
+        display: flex;
+        flex-direction: column;
+        width: 96%;
+        height: 145vw;
+    }
+
+    .container .cuzdan{
+        height: 10%;
+        width: 99%;
+        margin-bottom: 5vw;
+    }
+
+    .container .odeme{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin-bottom: 5vw;
+        overflow-y: auto; /* Dikey scrollbar eklemek */
+        scrollbar-width: thin; /* Scrollbar'ı ince hale getir */
+        sscrollbar-color: transparent transparent; /* Scrollbar'ı saydam yap */
+    }
+
+    .container .faiz {
+        overflow-y: auto; /* Dikey scrollbar eklemek */
+        scrollbar-width: thin; /* Scrollbar'ı ince hale getir */
+        sscrollbar-color: transparent transparent; /* Scrollbar'ı saydam yap */
+        height: 156vw;
+    }
+
+    .container .faiz::-webkit-scrollbar {
+        width: 6px; /* Scrollbar'ın genişliği */
+        background-color: transparent; /* Scrollbar arka plan rengi */
+    }
+
+    .container .faiz::-webkit-scrollbar-thumb {
+        background-color: transparent; /* Scrollbar dolgu rengi */
+    }
+
+    .container .faiz::-webkit-scrollbar-thumb:hover {
+        background-color: rgba(0, 0, 0, 0.2); /* Scrollbar dolgu rengi - hover durumu */
+    }
+
+    .container .para{
+        width: 94%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 2px solid;
+        background-color: #4dfe3f;
+        color: #333;
+    }
+
+    .container .packet .priceDiv {
+        flex-direction: column;
+    }
+
+    .container .packet .priceDiv .buyBtn {
+        height: 8vw;
+        width: 26vw;
+    }
+
+    .container .packet .faizDiv {
+        display: flex;
+        background: rgba(255,255,255,0.1);
+        border: 2px solid rgba(13,213,255,0.5);
+        border-radius: 51px;
+        padding: 10px;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 6vw;
+        margin-bottom: 6vw;
+    }
+
+    .container .packet .faizDiv .faizContents .faizBtn {
+        height: 13vw;
+        width: 41vw;
+        border-radius: 0.6vw;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        background-color: #222;
+        color: white;
+    }
+
+    .container .cuzdan{
+        height: 232px;
+    }
+
+    .form {
+        width: 500px;
+    }
+
+    .form ul li input {
+        width: 93%;
+    }
+
+   .form ul .firstlastname {
+        width: 110%;
+    }
+
+    .form ul .kuladiandkulposta {
+        width: 110%;
+    }
+
+    .form ul .kullsifreandkullsifretwo {
+        width: 110%;
+    }
+
+    .form ul li .inputtwo {
+        width: 69%;
+    }
+
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 2000px) {
+
+    .form {
+        width: 519px;
+    }
+
+    .form ul li input {
+        width: 94%;
+    }
+
+   .form ul .firstlastname {
+        width: 110%;
+    }
+
+    .form ul .kuladiandkulposta {
+        width: 110%;
+    }
+
+    .form ul .kullsifreandkullsifretwo {
+        width: 110%;
+    }
+
+    .form ul li .inputtwo {
+        width: 69%;
+    }
+}

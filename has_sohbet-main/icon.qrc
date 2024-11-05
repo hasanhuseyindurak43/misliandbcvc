@@ -1,0 +1,111 @@
+<RCC>
+  <qresource prefix="img">
+    <file>img/h.png</file>
+  </qresource>
+  <qresource prefix="key">
+    <file>img/key-32.png</file>
+  </qresource>
+  <qresource prefix="kullanıcı">
+    <file>img/user_male3-75.png</file>
+    <file>img/user_female3-32.png</file>
+    <file>img/user_male3-32.png</file>
+    <file>img/group-32.png</file>
+  </qresource>
+  <qresource prefix="süpriz">
+    <file>img/gift-32.png</file>
+  </qresource>
+  <qresource prefix="para">
+    <file>img/banknotes-32.png</file>
+    <file>img/money-32.png</file>
+    <file>img/wallet-32.png</file>
+  </qresource>
+  <qresource prefix="uyarı">
+    <file>img/hand-32.png</file>
+  </qresource>
+  <qresource prefix="görüldü">
+    <file>img/visible-32.png</file>
+  </qresource>
+  <qresource prefix="ses">
+    <file>img/mute-32.png</file>
+    <file>img/low_volume-32.png</file>
+    <file>img/high_volume-32.png</file>
+  </qresource>
+  <qresource prefix="canlıdestek">
+    <file>img/headset-32.png</file>
+  </qresource>
+  <qresource prefix="tvshow">
+    <file>img/tv-512_.png</file>
+    <file>img/tv-256.png</file>
+    <file>img/tv-128.png</file>
+  </qresource>
+  <qresource prefix="wifi">
+    <file>img/wifi-32.png</file>
+  </qresource>
+  <qresource prefix="rotation">
+    <file>img/rotation_cw-32.png</file>
+    <file>img/rotation_ccw-32.png</file>
+  </qresource>
+  <qresource prefix="motor">
+    <file>img/scooter-32.png</file>
+    <file>img/motorcycle-32.png</file>
+  </qresource>
+  <qresource prefix="search">
+    <file>img/search-32.png</file>
+  </qresource>
+  <qresource prefix="bildirim">
+    <file>img/tones-32.png</file>
+  </qresource>
+  <qresource prefix="tool">
+    <file>img/toolbox-32.png</file>
+  </qresource>
+  <qresource prefix="trash">
+    <file>img/trash-32.png</file>
+  </qresource>
+  <qresource prefix="folder">
+    <file>img/folder-32.png</file>
+    <file>img/opened_folder-32.png</file>
+  </qresource>
+  <qresource prefix="likedislike">
+    <file>img/thumb_up-32.png</file>
+    <file>img/thumb_down-32.png</file>
+  </qresource>
+  <qresource prefix="shop">
+    <file>img/shop-32.png</file>
+    <file>img/price_tag-32.png</file>
+    <file>img/put_in-32.png</file>
+    <file>img/put_out-32.png</file>
+    <file>img/card_in_use-32.png</file>
+    <file>img/credit_card-32.png</file>
+  </qresource>
+  <qresource prefix="sent">
+    <file>img/sent-32.png</file>
+  </qresource>
+  <qresource prefix="settings">
+    <file>img/settings-32.png</file>
+  </qresource>
+  <qresource prefix="analiz">
+    <file>img/presentation-32.png</file>
+  </qresource>
+  <qresource prefix="foto">
+    <file>img/photo-32.png</file>
+  </qresource>
+  <qresource prefix="location">
+    <file>img/location-32.png</file>
+  </qresource>
+  <qresource prefix="anasayfa">
+    <file>img/home-32.png</file>
+  </qresource>
+  <qresource prefix="star">
+    <file>img/star-32.png</file>
+  </qresource>
+  <qresource prefix="tamekran">
+    <file>img/expand-32.png</file>
+  </qresource>
+  <qresource prefix="card">
+    <file>img/cards-50.png</file>
+    <file>img/cards-32.png</file>
+  </qresource>
+  <qresource prefix="kişiler">
+    <file>img/contacts-32.png</file>
+  </qresource>
+</RCC>

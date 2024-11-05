@@ -1,0 +1,17 @@
+{
+  "name": "HASMOBİLE",
+  "short_name": "HASMOBİLE",
+  "description": "HASMOBİLE",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#01032c",
+  "color": "#ffffff",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "img/h.png",
+      "sizes": "192x192",
+      "type": "img/h.png"
+    }
+  ]
+}
